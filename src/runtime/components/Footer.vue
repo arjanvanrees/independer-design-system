@@ -36,7 +36,7 @@
           Auteursrecht
         </NuxtLink>
       </div>
-      
+
       <IButton tone="wire-purple" label="Begin opnieuw" icon="eva:trash-2-outline" @click.prevent="emit('reset')" />
     </div>
   </footer>

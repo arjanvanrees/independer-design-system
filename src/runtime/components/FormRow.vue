@@ -31,4 +31,3 @@ const grid = computed(() => {
   }
 })
 </script>
-

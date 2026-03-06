@@ -1,11 +1,16 @@
 <template>
     <Teleport to="body">
         <Transition name="dialog-fade">
-            <div v-if="show" class="dialog grid grid-rows-[auto_1fr_auto] fixed bottom-4 desktop:bottom-auto desktop:top-1/2 desktop:left-1/2 desktop:-translate-y-1/2 desktop:-translate-x-1/2 z-100 shadow-default rounded-xl" :class="[ classes, backgroundColorClass, sizeClasses ]">
-                <header class="grid dialog__header items-center px-2 py-2 bg-white border-b border-purple-light rounded-t-xl">
+            <div v-if="show"
+                class="dialog grid grid-rows-[auto_1fr_auto] fixed bottom-4 desktop:bottom-auto desktop:top-1/2 desktop:left-1/2 desktop:-translate-y-1/2 desktop:-translate-x-1/2 z-100 shadow-default rounded-xl"
+                :class="[classes, backgroundColorClass, sizeClasses]">
+                <header
+                    class="grid dialog__header items-center px-2 py-2 bg-white border-b border-purple-light rounded-t-xl">
                     <span class="col-start-2 text-center font-semibold tablet:text-lg">{{ title }}</span>
 
-                    <button class="col-start-3 p-3 ml-auto text-purple rounded-lg transition-all hover:bg-purple-200 hover:ring-purple/20 active:bg-purple/40 active:ring-purple/40" @click="close">
+                    <button
+                        class="col-start-3 p-3 ml-auto text-purple rounded-lg transition-all hover:bg-purple-200 hover:ring-purple/20 active:bg-purple/40 active:ring-purple/40"
+                        @click="close">
                         <Icon name="eva:close-outline" class="cursor-pointer" />
                     </button>
                 </header>
@@ -14,14 +19,16 @@
                     <slot />
                 </div>
 
-                <div v-if="$slots.footer" class="flex flex-col justify-end gap-2 px-4 py-4 border-t border-purple-light tablet:gap-4 tablet:flex-row tablet:px-6">
+                <div v-if="$slots.footer"
+                    class="flex flex-col justify-end gap-2 px-4 py-4 border-t border-purple-light tablet:gap-4 tablet:flex-row tablet:px-6">
                     <slot name="footer" />
                 </div>
             </div>
         </Transition>
 
         <Transition name="backdrop-fade">
-            <div v-if="show" class="fixed w-full h-full top-0 left-0 bg-black/30 backdrop-blur-sm z-90" @click="close" />
+            <div v-if="show" class="fixed w-full h-full top-0 left-0 bg-black/30 backdrop-blur-sm z-90"
+                @click="close" />
         </Transition>
     </Teleport>
 </template>

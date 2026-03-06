@@ -6,7 +6,8 @@
             <slot />
         </div>
 
-        <Icon v-if="closeButton" name="eva:close-outline" class="text-grey-dark cursor-pointer" @click.prevent="close" />
+        <Icon v-if="closeButton" name="eva:close-outline" class="text-grey-dark cursor-pointer"
+            @click.prevent="close" />
     </div>
 </template>
 

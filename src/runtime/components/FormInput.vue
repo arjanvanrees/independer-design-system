@@ -1,19 +1,9 @@
 <template>
   <div>
-    <FormLabel
-      v-if="label"
-      :name="name"
-      :description="descriptionTop"
-      :label="label"
-      :label-classes="labelClasses"
-    />
- 
+    <FormLabel v-if="label" :name="name" :description="descriptionTop" :label="label" :label-classes="labelClasses" />
+
     <div class="relative">
-      <Icon
-        v-if="leadingIcon"
-        :name="leadingIcon"
-        class="absolute ml-3 mt-3"
-      />
+      <Icon v-if="leadingIcon" :name="leadingIcon" class="absolute ml-3 mt-3" />
 
       <div v-if="trailingIcon" class="absolute right-0 mr-3 mt-3">
         {{ trailingIcon }}
@@ -29,8 +19,7 @@
         </button>
       </div>
 
-      <input
-        class="
+      <input class="
           block
           h-12
           py-[0.6875rem]
@@ -47,24 +36,11 @@
           disabled:bg-grey-light
           disabled:border-grey
           disabled:cursor-not-allowed
-        "
-        :class="{ 'pl-10': leadingIcon, 'pr-12': trailingIcon, 'pr-20': steps }"
-        :type="type"
-        :id="name"
-        :name="name"
-        :value="modelValue"
-        :inputmode="inputmode"
-        :pattern="pattern"
-        :min="min"
-        :ref="name"
-        :autocomplete="autocomplete"
-        :disabled="disabled"
-        :placeholder="placeholder"
-        @input="emit('update:modelValue', $event.target.value)"
-        v-on:blur="emit('blur', $event)"
-        v-on:focus="emit('focus', $event)"
-        v-maska="mask"
-      />
+        " :class="{ 'pl-10': leadingIcon, 'pr-12': trailingIcon, 'pr-20': steps }" :type="type" :id="name" :name="name"
+        :value="modelValue" :inputmode="inputmode" :pattern="pattern" :min="min" :ref="name"
+        :autocomplete="autocomplete" :disabled="disabled" :placeholder="placeholder"
+        @input="emit('update:modelValue', $event.target.value)" v-on:blur="emit('blur', $event)"
+        v-on:focus="emit('focus', $event)" v-maska="mask" />
     </div>
 
     <div v-if="description" class="mt-2 text-grey-dark">{{ description }}</div>
@@ -108,6 +84,6 @@ const stepDown = () => {
 
 <style scoped>
 input[type='date']::-webkit-calendar-picker-indicator {
-    display: none;
+  display: none;
 }
 </style>

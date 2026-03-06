@@ -6,8 +6,12 @@
             </div>
 
             <div class="flex items-start justify-end font-semibold">
-                <div :class="{ 'text-xl leading-6': size === 'small', 'text-[32px] leading-none': size === 'medium', 'text-[48px] leading-none': size === 'large' }">{{ premium.euro }}</div>
-                <div :class="{ 'text-xs leading-5': size === 'small', 'text-[16px] leading-none mt-1': size === 'medium', 'text-[24px] leading-none mt-1': size === 'large' }">,{{ premium.cent }}</div>
+                <div
+                    :class="{ 'text-xl leading-6': size === 'small', 'text-[32px] leading-none': size === 'medium', 'text-[48px] leading-none': size === 'large' }">
+                    {{ premium.euro }}</div>
+                <div
+                    :class="{ 'text-xs leading-5': size === 'small', 'text-[16px] leading-none mt-1': size === 'medium', 'text-[24px] leading-none mt-1': size === 'large' }">
+                    ,{{ premium.cent }}</div>
             </div>
 
             <div v-if="closable === false" class="text-grey-dark">
@@ -15,7 +19,8 @@
             </div>
 
             <div v-if="discount">
-                <div class="text-purple underline underline-offset-4 decoration-1 decoration-dotted cursor-pointer" @click.prevent="emit('discount')">Incl. € {{ discount.euro }},{{ discount.cent }} korting</div>
+                <div class="text-purple underline underline-offset-4 decoration-1 decoration-dotted cursor-pointer"
+                    @click.prevent="emit('discount')">Incl. € {{ discount.euro }},{{ discount.cent }} korting</div>
             </div>
 
             <div v-if="savings">

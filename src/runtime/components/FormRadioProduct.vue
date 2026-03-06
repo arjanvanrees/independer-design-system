@@ -1,8 +1,11 @@
 <template>
-    <label class="radio group flex flex-col p-4 cursor-pointer bg-white border border-grey-light rounded-lg transition-all" :class="{ '!border-green ring-1 ring-green' : value === modelValue }" :for="id">
+    <label
+        class="radio group flex flex-col p-4 cursor-pointer bg-white border border-grey-light rounded-lg transition-all"
+        :class="{ '!border-green ring-1 ring-green': value === modelValue }" :for="id">
         <div class="flex">
-            <input class="sr-only peer" type="radio" :id="id" :name="name" :value="value" :ref="name" :checked="value === modelValue"
-                :disabled="disabled" @change="emit('update:modelValue', $event.target.value)" />
+            <input class="sr-only peer" type="radio" :id="id" :name="name" :value="value" :ref="name"
+                :checked="value === modelValue" :disabled="disabled"
+                @change="emit('update:modelValue', $event.target.value)" />
             <div class="
                 radio-icon
                 relative
@@ -37,7 +40,8 @@
             " />
             <div class="flex flex-col w-full pb-4">
                 <div class="flex">
-                    <span class="font-serif text-purple-dark font-bold" :class="{ 'text-grey-dark': disabled }">{{ label }}</span>
+                    <span class="font-serif text-purple-dark font-bold" :class="{ 'text-grey-dark': disabled }">{{ label
+                        }}</span>
 
                     <Icon v-if="tooltip" name="eva:info-outline" class="ml-2 cursor-pointer text-grey-dark" />
 
@@ -49,7 +53,7 @@
                 <p v-if="price" class="font-semibold text-grey-darker">{{ price }}</p>
             </div>
         </div>
-        
+
         <slot />
     </label>
 </template>

@@ -1,27 +1,31 @@
 <template>
-    <fieldset class="card w-full shrink-0 grow-0 mb-4 p-4 rounded-xl tablet:p-6 transition-all shadow-sm scroll-mt-6 tablet:scroll-mt-8" ref="sectionRef" :class="classesCard">
-        <header v-if="title" class="flex items-start border-b-grey-light" :class="classesHeader">
-          <div v-if="step" class="hexagon w-7 h-7 tablet:w-8 tablet:h-8 mr-2 tablet:mr-4 z-10" :class="classesHexagon"></div>
+  <fieldset
+    class="card w-full shrink-0 grow-0 mb-4 p-4 rounded-xl tablet:p-6 transition-all shadow-sm scroll-mt-6 tablet:scroll-mt-8"
+    ref="sectionRef" :class="classesCard">
+    <header v-if="title" class="flex items-start border-b-grey-light" :class="classesHeader">
+      <div v-if="step" class="hexagon w-7 h-7 tablet:w-8 tablet:h-8 mr-2 tablet:mr-4 z-10" :class="classesHexagon">
+      </div>
 
-          <h3 class="transition-all" :class="classesTitle">
-            {{ title }}
-          </h3>
+      <h3 class="transition-all" :class="classesTitle">
+        {{ title }}
+      </h3>
 
-          <button v-if="section.state === 'saved'" class="!p-0 text-purple hover:text-purple-dark ml-auto" @click.prevent="emit('click-edit', $event)">
-            <Icon name="eva:edit-outline" />   
-          </button>
-        </header>
+      <button v-if="section.state === 'saved'" class="!p-0 text-purple hover:text-purple-dark ml-auto"
+        @click.prevent="emit('click-edit', $event)">
+        <Icon name="eva:edit-outline" />
+      </button>
+    </header>
 
-        <div class="desktop:mx-12">
-          <Collapse :when="section.state === 'saved'" class="v-collapse"> 
-            <slot name="saved" />
-          </Collapse>
+    <div class="desktop:mx-12">
+      <Collapse :when="section.state === 'saved'" class="v-collapse">
+        <slot name="saved" />
+      </Collapse>
 
-          <Collapse :when="section.state === 'editing'" class="v-collapse">
-            <slot name="editing" />
-          </Collapse>
-        </div>
-    </fieldset>
+      <Collapse :when="section.state === 'editing'" class="v-collapse">
+        <slot name="editing" />
+      </Collapse>
+    </div>
+  </fieldset>
 </template>
 
 <script setup>

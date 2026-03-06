@@ -5,7 +5,7 @@
                 <Icon v-if="iconPrimary" :name="iconPrimary" />
                 {{ labelPrimary }}
             </div>
-    
+
             <div v-else class="flex gap-2">
                 <Icon v-if="iconSecondary" :name="iconSecondary" />
                 {{ labelSecondary }}
@@ -16,10 +16,10 @@
 
 <script setup>
 defineProps({
-  state: Boolean,
-  iconPrimary: String,
-  labelPrimary: String,
-  iconSecondary: String,
-  labelSecondary: String,
+    state: Boolean,
+    iconPrimary: String,
+    labelPrimary: String,
+    iconSecondary: String,
+    labelSecondary: String,
 });
 </script>

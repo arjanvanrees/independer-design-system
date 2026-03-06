@@ -1,10 +1,15 @@
 <template>
     <Teleport to="body">
         <Transition appear name="modal-slide-bottom">
-            <div v-if="show" class="modal grid grid-rows-[auto_1fr_auto] fixed w-full top-4 rounded-t-xl desktop:rounded-tr-none desktop:rounded-l-xl z-80 desktop:top-0 desktop:right-0 shadow-2xl" :class="[ classes, sizeClasses, backgroundColorClass ]">
-                <header class="modal__header grid  items-center px-2 py-2 bg-white border-b border-b-purple-light rounded-t-xl desktop:px-3 desktop:rounded-tl-xl desktop:rounded-tr-none">
+            <div v-if="show"
+                class="modal grid grid-rows-[auto_1fr_auto] fixed w-full top-4 rounded-t-xl desktop:rounded-tr-none desktop:rounded-l-xl z-80 desktop:top-0 desktop:right-0 shadow-2xl"
+                :class="[classes, sizeClasses, backgroundColorClass]">
+                <header
+                    class="modal__header grid  items-center px-2 py-2 bg-white border-b border-b-purple-light rounded-t-xl desktop:px-3 desktop:rounded-tl-xl desktop:rounded-tr-none">
                     <Transition name="fade" mode="out-in">
-                        <button v-if="showBack" class="col-start-1 flex p-3 rounded-lg cursor-pointer text-purple transition-all duration-300 mr-auto hover:bg-purple-200 hover:ring-purple/20 active:bg-purple/40 active:ring-purple/40" @click="back">
+                        <button v-if="showBack"
+                            class="col-start-1 flex p-3 rounded-lg cursor-pointer text-purple transition-all duration-300 mr-auto hover:bg-purple-200 hover:ring-purple/20 active:bg-purple/40 active:ring-purple/40"
+                            @click="back">
                             <Icon name="eva:arrow-ios-back-outline" class="block" />
                         </button>
                     </Transition>
@@ -13,7 +18,9 @@
                         <div :key="title" class="col-start-2 text-center font-semibold tablet:text-lg">{{ title }}</div>
                     </Transition>
 
-                    <button class="col-start-3 flex p-3 ml-auto rounded-lg cursor-pointer text-purple transition-all duration-300 hover:bg-purple-200 hover:ring-purple/20 active:bg-purple/40 active:ring-purple/40" @click="close">
+                    <button
+                        class="col-start-3 flex p-3 ml-auto rounded-lg cursor-pointer text-purple transition-all duration-300 hover:bg-purple-200 hover:ring-purple/20 active:bg-purple/40 active:ring-purple/40"
+                        @click="close">
                         <Icon name="eva:close-outline" class="block" />
                     </button>
                 </header>
@@ -22,14 +29,16 @@
                     <slot />
                 </div>
 
-                <div v-if="$slots.footer" class="px-4 py-4 bg-white border-t border-purple-light desktop:rounded-bl-xl desktop:px-10">                   
+                <div v-if="$slots.footer"
+                    class="px-4 py-4 bg-white border-t border-purple-light desktop:rounded-bl-xl desktop:px-10">
                     <slot name="footer" />
                 </div>
             </div>
         </Transition>
 
         <Transition name="backdrop-fade">
-            <div v-if="show" class="fixed w-full h-full top-0 left-0 bg-black/30 backdrop-blur-sm z-70" @click="close" />
+            <div v-if="show" class="fixed w-full h-full top-0 left-0 bg-black/30 backdrop-blur-sm z-70"
+                @click="close" />
         </Transition>
     </Teleport>
 </template>
@@ -59,7 +68,7 @@ const props = defineProps({
     },
 });
 
-onMounted(() => {    
+onMounted(() => {
     window.addEventListener('keydown', handleEscape)
 })
 

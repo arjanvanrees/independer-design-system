@@ -1,18 +1,19 @@
 <template>
   <div class="@container mb-6">
     <FormRow :grid="true" class="mb-0!">
-        <FormInput name="postcode" label="Postcode" autocomplete="postcode" type="text" class="w-full col-span-2 @md:col-span-2" :label-classes="labelClasses" v-model="address.postcode" />
-      
-        <FormInput name="number" label="Huisnummer" type="number" class="w-full col-span-1" :label-classes="labelClasses" v-model="address.number" />
-        <FormSelect name="addition" label="Toevoeging" class="w-full col-span-1" :label-classes="labelClasses" :options="address.additions" :selected="address.addition" v-model="address.addition" :disabled="selectAdditionDisabled" />
+      <FormInput name="postcode" label="Postcode" autocomplete="postcode" type="text"
+        class="w-full col-span-2 @md:col-span-2" :label-classes="labelClasses" v-model="address.postcode" />
+
+      <FormInput name="number" label="Huisnummer" type="number" class="w-full col-span-1" :label-classes="labelClasses"
+        v-model="address.number" />
+      <FormSelect name="addition" label="Toevoeging" class="w-full col-span-1" :label-classes="labelClasses"
+        :options="address.additions" :selected="address.addition" v-model="address.addition"
+        :disabled="selectAdditionDisabled" />
     </FormRow>
 
     <Collapse class="v-collapse" :when="address.address != ''">
       <div class="flex mt-2">
-        <Icon 
-          name="eva:checkmark-outline"
-          class="mr-2 text-green"
-        />
+        <Icon name="eva:checkmark-outline" class="mr-2 text-green" />
         {{ address.address }}
       </div>
     </Collapse>

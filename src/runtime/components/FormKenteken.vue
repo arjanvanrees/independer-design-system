@@ -1,15 +1,13 @@
 <template>
   <div class="mb-6">
     <FormRow :grid="true" class="mb-0!">
-      <FormInput name="kenteken" label="Kenteken" leading-icon="game-icons:european-flag" type="text" class="col-span-2" v-model="auto.kenteken" />
+      <FormInput name="kenteken" label="Kenteken" leading-icon="game-icons:european-flag" type="text" class="col-span-2"
+        v-model="auto.kenteken" />
     </FormRow>
-      
+
     <Collapse class="v-collapse" :when="auto.merk != '' && auto.model != ''">
       <div class="flex mt-2 col-span-4">
-        <Icon 
-          name="eva:checkmark-outline"
-          class="mr-2 text-green"
-        />
+        <Icon name="eva:checkmark-outline" class="mr-2 text-green" />
         {{ auto.merk }} {{ auto.model }}
       </div>
     </Collapse>

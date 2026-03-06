@@ -1,20 +1,10 @@
 <template>
   <div>
-    <FormLabel
-      v-if="label"
-      :name="name"
-      :label="label"
-      :label-classes="labelClasses"
-    />
+    <FormLabel v-if="label" :name="name" :label="label" :label-classes="labelClasses" />
     <div class="relative">
-      <Icon
-        v-if="leadingIcon"
-        :name="leadingIcon"
-        class="absolute ml-3 mt-3 text-grey-darker"
-      />
+      <Icon v-if="leadingIcon" :name="leadingIcon" class="absolute ml-3 mt-3 text-grey-darker" />
 
-      <select
-        class="
+      <select class="
           block
           py-[0.6875rem]
           px-3
@@ -29,29 +19,16 @@
           ring-purple
           appearance-none
           disabled:bg-grey-light disabled:hover:border-grey
-        "
-        :id="name"
-        :disabled="disabled"
-        :value="modelValue"
-        :class="{ 'pl-10': leadingIcon }"
-        :placeholder="defaultOption"
-        @change="emit('update:modelValue', $event.target.value)"
-      >
+        " :id="name" :disabled="disabled" :value="modelValue" :class="{ 'pl-10': leadingIcon }"
+        :placeholder="defaultOption" @change="emit('update:modelValue', $event.target.value)">
         <option disabled selected>{{ defaultOption }}</option>
-        <option
-          v-for="option in options"
-          :key="option.value"
-          :value="option.value"
-          :selected="option.value === modelValue"
-        >
+        <option v-for="option in options" :key="option.value" :value="option.value"
+          :selected="option.value === modelValue">
           {{ option.label }}
         </option>
       </select>
 
-      <Icon
-        name="eva:arrow-ios-downward-outline"
-        class="absolute bottom-3 right-3 pointer-events-none text-purple"
-      />
+      <Icon name="eva:arrow-ios-downward-outline" class="absolute bottom-3 right-3 pointer-events-none text-purple" />
     </div>
   </div>
 </template>

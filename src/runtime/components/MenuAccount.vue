@@ -9,9 +9,11 @@
         </ul>
 
         <ul class="flex flex-col gap-3 p-3">
-            <IButton v-if="!user.loggedIn" tone="filled-yellow" label="Inloggen" class="w-full" @click.prevent="user.toggleDialogLogin" />
+            <IButton v-if="!user.loggedIn" tone="filled-yellow" label="Inloggen" class="w-full"
+                @click.prevent="user.toggleDialogLogin" />
             <IButton v-if="!user.loggedIn" tone="wire-purple" label="Nieuwe klant?" class="w-full" />
-            <ISubmenuItem v-if="user.loggedIn" label="Uitloggen" icon="eva:log-out-outline" @click.prevent="user.toggleLogin" />
+            <ISubmenuItem v-if="user.loggedIn" label="Uitloggen" icon="eva:log-out-outline"
+                @click.prevent="user.toggleLogin" />
         </ul>
     </div>
 </template>

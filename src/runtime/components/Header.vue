@@ -222,7 +222,7 @@ const stepOptions = computed(() => {
         path: `/${props.domain}/gegevens`,
       },
       {
-        number: 2, 
+        number: 2,
         label: '2. Resultaten',
         path: `/${props.domain}/resultaten`
       },
