@@ -1,12 +1,12 @@
-import { addComponent, addComponentsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
+import { addComponentsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
 
-export interface ModuleOptions {}
+type ModuleOptions = Record<string, never>
 
 const resolver = createResolver(import.meta.url)
 
 export default defineNuxtModule<ModuleOptions>({
   meta: {
-    name: 'independer-design-system',
+    name: '@independer/design-system',
 
     configKey: 'independerDesignSystem',
 
@@ -25,7 +25,7 @@ export default defineNuxtModule<ModuleOptions>({
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
       prefix: 'Ind',
-      pathPrefix: true
+      pathPrefix: true,
     })
 
     nuxt.options.css.push(resolver.resolve('./runtime/assets/style.css'))
