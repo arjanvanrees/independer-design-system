@@ -1,6 +1,5 @@
-import { defineNuxtModule, addPlugin, createResolver, addComponentsDir } from '@nuxt/kit'
+import { addComponent, addComponentsDir, createResolver, defineNuxtModule } from '@nuxt/kit'
 
-// Module options TypeScript interface definition
 export interface ModuleOptions {}
 
 const resolver = createResolver(import.meta.url)
@@ -22,13 +21,11 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
 
-  defaults: {},
-
   setup(options, nuxt) {
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
-      prefix: 'I',
-      global: true,
+      prefix: 'Ind',
+      pathPrefix: true
     })
 
     nuxt.options.css.push(resolver.resolve('./runtime/assets/style.css'))

@@ -11,9 +11,9 @@ Independer Design System for Nuxt 4.
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
 - ⛰ &nbsp;Create interactive prototypes with the included components
 - 🧑‍💻 &nbsp;Built for Nuxt 4
+- 🧩 &nbsp;Auto-registers base form components with an `Independer` prefix
 
 ## Quick Setup
 
@@ -25,6 +25,37 @@ npx nuxt module add independer-design-system
 
 That's it! You can now use Independer Design System in your Nuxt app ✨
 
+```vue
+<template>
+  <IndependerInput v-model="name" name="name" label="Naam" />
+  <IndependerButton label="Versturen" tone="filled-yellow" />
+</template>
+
+<script setup>
+const name = ref('')
+</script>
+```
+
+By default the module registers:
+
+`IndependerAutocomplete`, `IndependerButton`, `IndependerButtonToggle`, `IndependerCheckbox`, `IndependerInput`, `IndependerLabel`, `IndependerRadio`, `IndependerRow`, `IndependerSelect`, and `IndependerTabs`.
+
+You can change the component prefix in `nuxt.config.ts`:
+
+```ts
+export default defineNuxtConfig({
+  modules: ['independer-design-system'],
+  independerDesignSystem: {
+    prefix: 'Independer',
+  },
+})
+```
+
+Run the local playground to see the base form components in context:
+
+```bash
+npm run dev
+```
 
 ## Contribution
 

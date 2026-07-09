@@ -1,10 +1,24 @@
 <template>
   <div class="flex gap-1 p-1 bg-white border border-grey rounded-lg hover:border-grey-dark transition-all">
-    <label v-for="option in options" class="relative flex w-1/2 cursor-pointer" :for="id">
-      <input class="sr-only peer" type="radio" :id="option.id" :name="option.name" :value="option.value"
-        :ref="option.name" :checked="option.value === modelValue" :disabled="option.disabled"
-        @change="emit('update:modelValue', $event.target.value)" />
-      <div class="  
+    <label
+      v-for="option in options"
+      :key="option.id || option.value"
+      class="relative flex w-1/2 cursor-pointer"
+      :for="option.id"
+    >
+      <input
+        :id="option.id"
+        :ref="option.name"
+        class="sr-only peer"
+        type="radio"
+        :name="option.name"
+        :value="option.value"
+        :checked="option.value === modelValue"
+        :disabled="option.disabled"
+        @change="emit('update:modelValue', $event.target.value)"
+      >
+      <div
+        class="
         relative
         flex
         w-full
@@ -25,10 +39,17 @@
         peer-disabled:hover:bg-white
         peer-checked:hover:bg-purple
         hover:bg-black/20
-        ">
+        "
+      >
         <div class="w-full text-center">
-          <div class="tab font-semibold" :class="{ ' tablet:text-xl': largeTitle }" v-html="option.label" />
-          <div v-if="option.description" class="text-sm">{{ option.description }}</div>
+          <div
+            class="tab font-semibold"
+            :class="{ ' tablet:text-xl': largeTitle }"
+          >{{ option.label }}</div>
+          <div
+            v-if="option.description"
+            class="text-sm"
+          >{{ option.description }}</div>
         </div>
       </div>
     </label>
@@ -36,7 +57,7 @@
 </template>
 
 <script setup>
-const emit = defineEmits(['update:modelValue']);
+const emit = defineEmits(['update:modelValue'])
 
 defineProps({
   id: String,
