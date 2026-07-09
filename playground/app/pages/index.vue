@@ -2,11 +2,8 @@
   <main class="min-h-screen bg-interface px-4 py-8 text-grey-1000 tablet:px-8">
     <div class="mx-auto max-w-4xl">
       <header class="mb-8">
-        <p class="mb-2 text-sm font-semibold uppercase tracking-wide text-purple">
-          Ind Design System
-        </p>
         <h1 class="font-serif text-3xl font-bold text-purple-dark tablet:text-5xl">
-          Base form components
+          DS2 Vue Components
         </h1>
       </header>
 
@@ -54,7 +51,6 @@
             name="amount"
             label="Bedrag"
             leading-icon="eva:credit-card-outline"
-            trailing-icon="eva:hash-outline"
             type="number"
             inputmode="numeric"
             min="0"
@@ -65,12 +61,11 @@
         </IndFormRow>
 
         <IndFormRow>
-          <IndFormAutocomplete
-            v-model="form.city"
-            name="city"
-            label="Woonplaats"
-            placeholder="Zoek een plaats"
-            :options="cityOptions"
+          <IndFormTextarea
+            v-model="form.notes"
+            name="notes"
+            label="Opmerkingen"
+            placeholder="Voeg hier je opmerkingen toe"
           />
         </IndFormRow>
       </section>
@@ -104,7 +99,6 @@
               name="contact"
               label="Telefoon"
               value="phone"
-              number="2 werkdagen"
             />
           </div>
 
@@ -116,7 +110,7 @@
               label="Stuur mij productupdates"
               advice
             >
-              <span class="mt-1 text-sm text-grey-dark">
+              <span class="mt-1 text-grey-dark">
                 Handig voor wijzigingen in dekking en voorwaarden.
               </span>
             </IndFormCheckbox>
@@ -150,11 +144,6 @@
           @click="showSummary = !showSummary"
         />
       </section>
-
-      <pre
-        v-if="showSummary"
-        class="mt-6 overflow-auto rounded-lg border border-grey-light bg-white p-4 text-sm"
-      >{{ formSummary }}</pre>
     </div>
   </main>
 </template>
@@ -170,6 +159,7 @@ const form = reactive({
   product: '',
   amount: 1000,
   city: '',
+  notes: '',
   customerType: 'new',
   contact: 'email',
   newsletter: true,
@@ -178,18 +168,10 @@ const form = reactive({
 
 const showSummary = ref(false)
 
-const formSummary = computed(() => JSON.stringify(form, null, 2))
-
 const productOptions = [
   { label: 'Autoverzekering', value: 'car-insurance' },
   { label: 'Zorgverzekering', value: 'health-insurance' },
   { label: 'Hypotheek', value: 'mortgage' },
-]
-
-const cityOptions = [
-  { label: 'Amsterdam', value: 'amsterdam' },
-  { label: 'Rotterdam', value: 'rotterdam' },
-  { label: 'Utrecht', value: 'utrecht' },
 ]
 
 const customerTypeOptions = [

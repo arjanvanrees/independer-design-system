@@ -94,11 +94,7 @@ const slotPassed = !!slots.default
 }
 
 .checkbox-icon::after {
-  border-bottom: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-  color: white;
-  height: 0.75rem;
-  transform: rotate(45deg);
-  width: 0.375rem;
+  background: url('../../assets/images/checkbox.svg') no-repeat center center;
+  background-size: contain;
 }
 </style>

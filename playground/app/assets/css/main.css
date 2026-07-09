@@ -2,6 +2,9 @@
 
 @import "tailwindcss";
 
+@source "../../**/*.{vue,js,ts}";
+@source "../../../../src/runtime/components/**/*.{vue,js,ts}";
+
 @theme {
     --container-mobile: 320px;
     --container-tablet: 768px;

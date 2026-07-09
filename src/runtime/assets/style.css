@@ -34,7 +34,7 @@
     --text-5xl: 3rem;
     --text-5xl--line-height: 3.5rem;
 
-    --color-interface: #F3F2F5;
+    --color-interface: #F2F1FD;
     --color-transparent: transparent;
     --color-current: currentColor;
 
@@ -169,4 +169,8 @@
 
     /* --shadow-sm: 0 1px 3px 0 rgb(110 66 210 / 0.1), 0 1px 2px -1px rgb(110 66 210 / 0.1); */
     --shadow-default: 0 0 1px 0 rgba(0, 0, 0, 0.1), 0 0 3px 0 rgba(0, 0, 0, 0.1), 0 0 16px 4px rgba(0, 0, 0, 0.05)
+}
+
+.iconify {
+    @apply block w-6 h-6 flex-shrink-0;
 }

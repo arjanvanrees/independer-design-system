@@ -66,7 +66,6 @@
         :rows="rows"
         @input="emit('update:modelValue', $event.target.value)"
         @blur="emit('blur', $event)"
-        v-maska="mask"
       />
     </div>
 
