@@ -67,6 +67,12 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
+defineOptions({
+  name: 'IndButton',
+})
+
 const props = defineProps({
   tone: String,
   name: String,

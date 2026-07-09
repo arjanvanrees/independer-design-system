@@ -8,6 +8,12 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
+defineOptions({
+  name: 'IndFormRow',
+})
+
 const props = defineProps({
   last: {
     type: Boolean,

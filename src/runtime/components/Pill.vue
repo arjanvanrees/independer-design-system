@@ -8,6 +8,12 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+
+defineOptions({
+  name: 'IndPill',
+})
+
 const props = defineProps({
   label: {
     type: String,

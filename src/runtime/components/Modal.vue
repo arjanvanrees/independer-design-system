@@ -83,6 +83,8 @@
 </template>
 
 <script setup>
+import { computed, onMounted, onUnmounted, watch } from 'vue'
+
 defineOptions({
   name: 'IndModal',
 })

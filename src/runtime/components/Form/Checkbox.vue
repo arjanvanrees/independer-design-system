@@ -41,6 +41,12 @@
 </template>
 
 <script setup>
+import { useSlots } from 'vue'
+
+defineOptions({
+  name: 'IndFormCheckbox',
+})
+
 const emit = defineEmits(['update:modelValue', 'focus'])
 
 defineProps({
