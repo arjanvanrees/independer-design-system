@@ -20,7 +20,7 @@ Independer Design System for Nuxt 4.
 Install the module to your Nuxt application with one command:
 
 ```bash
-npx nuxt module add @independer/design-system
+npx nuxt module add independer-design-system
 ```
 
 That's it! You can now use Independer Design System in your Nuxt app ✨
@@ -44,7 +44,7 @@ Use the module in `nuxt.config.ts`:
 
 ```ts
 export default defineNuxtConfig({
-  modules: ['@independer/design-system'],
+  modules: ['independer-design-system'],
 })
 ```
 
@@ -87,14 +87,14 @@ npm run dev
 
 
 <!-- Badges -->
-[npm-version-src]: https://img.shields.io/npm/v/@independer/design-system/latest.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-version-href]: https://npmjs.com/package/@independer/design-system
+[npm-version-src]: https://img.shields.io/npm/v/independer-design-system/latest.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-version-href]: https://npmjs.com/package/independer-design-system
 
-[npm-downloads-src]: https://img.shields.io/npm/dm/@independer/design-system.svg?style=flat&colorA=020420&colorB=00DC82
-[npm-downloads-href]: https://npm.chart.dev/@independer/design-system
+[npm-downloads-src]: https://img.shields.io/npm/dm/independer-design-system.svg?style=flat&colorA=020420&colorB=00DC82
+[npm-downloads-href]: https://npmjs.com/package/independer-design-system
 
-[license-src]: https://img.shields.io/npm/l/@independer/design-system.svg?style=flat&colorA=020420&colorB=00DC82
-[license-href]: https://npmjs.com/package/@independer/design-system
+[license-src]: https://img.shields.io/npm/l/independer-design-system.svg?style=flat&colorA=020420&colorB=00DC82
+[license-href]: https://npmjs.com/package/independer-design-system
 
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt
 [nuxt-href]: https://nuxt.com
