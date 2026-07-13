@@ -2,13 +2,13 @@
   <main class="min-h-screen bg-interface px-4 py-8 text-grey-1000 tablet:px-8">
     <div class="mx-auto max-w-4xl">
       <header class="mb-8">
-        <h1 class="font-serif text-3xl font-bold text-purple-dark tablet:text-5xl">
+        <h1 class="h1">
           DS2 Vue Components
         </h1>
       </header>
 
       <section class="mb-4 rounded-xl bg-white p-4 shadow-sm tablet:p-6">
-        <h2 class="mb-4 font-serif text-2xl font-bold text-purple-dark">
+        <h2 class="h3 mb-4">
           Persoonlijke gegevens
         </h2>
 
@@ -71,7 +71,7 @@
       </section>
 
       <section class="rounded-xl bg-white p-4 shadow-sm tablet:p-6">
-        <h2 class="mb-4 font-serif text-2xl font-bold text-purple-dark">
+        <h2 class="h3 mb-4">
           Voorkeuren
         </h2>
 
