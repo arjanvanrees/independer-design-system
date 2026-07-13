@@ -26,6 +26,7 @@
 
 <script setup>
 import { Collapse } from 'vue-collapsed'
+import { computed, ref, watch } from 'vue'
 
 const emit = defineEmits(['edit']);
 
