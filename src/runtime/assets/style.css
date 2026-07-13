@@ -2,6 +2,8 @@
 
 @import "tailwindcss";
 
+@source "../components/**/*.{vue,js,ts}";
+
 @theme {
     --container-mobile: 320px;
     --container-tablet: 768px;
