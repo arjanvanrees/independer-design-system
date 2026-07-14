@@ -31,7 +31,7 @@ const props = defineProps({
 </script>
 
 <style>
-@reference '../../assets/style.css';
+@reference '../assets/style.css';
 
 .price-fade-enter-active,
 .price-fade-leave-active {
