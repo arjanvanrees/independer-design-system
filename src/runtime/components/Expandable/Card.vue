@@ -18,7 +18,7 @@
 
 <script setup>
 import { Collapse } from 'vue-collapsed'
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const expanded = ref(false);
 
