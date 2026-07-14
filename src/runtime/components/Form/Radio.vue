@@ -71,16 +71,22 @@
         <IndPill
           v-if="advice"
           :label="adviceLabel"
+          class="ml-2"
         />
 
         <div
           v-if="number"
           class="ml-auto text-grey-dark"
-        >{{ number }}</div>
+        >
+          {{ number }}
+        </div>
+
         <div
           v-if="price && value === modelValue"
           class="ml-0 tablet:ml-auto text-grey-dark"
-        >{{ price }}</div>
+        >
+          {{ price }}
+        </div>
       </div>
 
       <slot />

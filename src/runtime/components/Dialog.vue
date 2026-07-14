@@ -3,7 +3,7 @@
     <Transition name="dialog-fade">
       <div
         v-if="isOpen"
-        class="dialog fixed bottom-4 z-100 grid grid-rows-[auto_1fr_auto] rounded-xl shadow-default desktop:bottom-auto desktop:left-1/2 desktop:top-1/2 desktop:-translate-x-1/2 desktop:-translate-y-1/2"
+        class="dialog fixed bottom-4 z-100 grid grid-rows-[auto_1fr_auto] rounded-xl shadow-overlay desktop:bottom-auto desktop:left-1/2 desktop:top-1/2 desktop:-translate-x-1/2 desktop:-translate-y-1/2"
         :class="[classes, backgroundColorClass, sizeClasses]"
         role="dialog"
         aria-modal="true"

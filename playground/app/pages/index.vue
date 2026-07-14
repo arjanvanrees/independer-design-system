@@ -1,13 +1,13 @@
 <template>
-  <main class="min-h-screen bg-interface px-4 py-8 text-grey-1000 tablet:px-8">
-    <div class="mx-auto max-w-4xl">
+  <main class="min-h-screen bg-interface py-8">
+    <div class="grid-container">
       <header class="mb-8">
         <h1 class="h1">
           DS2 Vue Components
         </h1>
       </header>
 
-      <IndFormFieldset class="mb-4 rounded-xl bg-white p-4 shadow-sm tablet:p-6" title="Persoonlijke gegevens" :step="true" :section="{ state: 'editing'}">
+      <IndFormFieldset title="Persoonlijke gegevens" class="card--first" :step="true" :section="{ state: 'editing'}">
         <template #editing>
           <IndFormRow grid>
             <IndFormInput
@@ -15,7 +15,6 @@
               class="col-span-2"
               name="first-name"
               label="Voornaam"
-              placeholder="Arjan"
               autocomplete="given-name"
               type="text"
             />
@@ -25,7 +24,6 @@
               class="col-span-2"
               name="last-name"
               label="Achternaam"
-              placeholder="Van Rees"
               autocomplete="family-name"
               type="text"
             />
@@ -39,7 +37,7 @@
               label="Product"
               leading-icon="eva:briefcase-outline"
               :options="productOptions"
-              default-option="Kies een product"
+              default-option="Maak een keuze..."
             />
 
             <IndFormInput
@@ -51,7 +49,7 @@
               type="number"
               inputmode="numeric"
               min="0"
-              steps
+              step="100"
               @step-up="form.amount += 100"
               @step-down="form.amount = Math.max(0, form.amount - 100)"
             />
@@ -68,7 +66,7 @@
         </template>
       </IndFormFieldset>
 
-      <IndFormFieldset class="rounded-xl bg-white p-4 shadow-sm tablet:p-6" title="Voorkeuren" :step="true" :section="{ state: 'editing'}">
+      <IndFormFieldset title="Voorkeuren" class="card--last" :step="true" :section="{ state: 'editing'}">
         <template #editing>
           <IndFormRow>
             <IndFormTabs
@@ -113,30 +111,30 @@
             name="terms"
             label="Ik ga akkoord met de voorwaarden"
           />
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <IndButton
+              label="Versturen"
+              tone="filled-yellow"
+              icon="eva:paper-plane-outline"
+            />
+
+            <IndButton
+              label="Secundaire actie"
+              tone="wire-purple"
+            />
+
+            <IndButtonToggle
+              :state="showSummary"
+              icon-primary="eva:eye-outline"
+              label-primary="Toon samenvatting"
+              icon-secondary="eva:eye-off-outline"
+              label-secondary="Verberg samenvatting"
+              @click="showSummary = !showSummary"
+            />
+          </div>
         </template>
       </IndFormFieldset>
-
-      <div class="mt-8 flex flex-wrap items-center gap-4">
-        <IndButton
-          label="Versturen"
-          tone="filled-yellow"
-          icon="eva:paper-plane-outline"
-        />
-
-        <IndButton
-          label="Secundaire actie"
-          tone="wire-purple"
-        />
-
-        <IndButtonToggle
-          :state="showSummary"
-          icon-primary="eva:eye-outline"
-          label-primary="Toon samenvatting"
-          icon-secondary="eva:eye-off-outline"
-          label-secondary="Verberg samenvatting"
-          @click="showSummary = !showSummary"
-        />
-      </div>
     </div>
   </main>
 </template>

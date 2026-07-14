@@ -36,9 +36,30 @@ const name = ref('')
 </script>
 ```
 
-By default the module registers:
+By default, the module registers the following components:
 
-`IndButton`, `IndButtonToggle`, `IndDialog`, `IndModal`, `IndPill`, `IndFormCheckbox`, `IndFormInput`, `IndFormLabel`, `IndFormRadio`, `IndFormRow`, `IndFormSelect`, `IndFormTabs`, and `IndFormTextarea`.
+- `IndButton`
+- `IndButtonToggle`
+- `IndDialog`
+- `IndExpandableCard`
+- `IndExpandableFilter`
+- `IndFormCheckbox`
+- `IndFormCheckboxProduct`
+- `IndFormFieldset`
+- `IndFormInput`
+- `IndFormLabel`
+- `IndFormRadio`
+- `IndFormRadioProduct`
+- `IndFormRow`
+- `IndFormSelect`
+- `IndFormTabs`
+- `IndFormTextarea`
+- `IndModal`
+- `IndNotification`
+- `IndPill`
+- `IndPrice`
+- `IndPriceQuote`
+- `IndUSP`
 
 Use the module in `nuxt.config.ts`:
 

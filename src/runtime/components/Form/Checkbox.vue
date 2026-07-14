@@ -19,7 +19,7 @@
 
     <div class="flex flex-col w-full">
       <div class="flex">
-        <span :class="[{ 'font-semibold': slotPassed }, labelClasses]">{{ label }}</span>
+        <span :class="labelClasses">{{ label }}</span>
 
         <Icon
           v-if="tooltip"
@@ -27,7 +27,11 @@
           class="ml-2 cursor-pointer text-grey-dark"
         />
 
-        <IndPill v-if="advice" />
+        <IndPill 
+          v-if="advice" 
+          :label="adviceLabel"
+          class="ml-2" 
+        />
 
         <div
           v-if="number"
@@ -41,8 +45,6 @@
 </template>
 
 <script setup>
-import { useSlots } from 'vue'
-
 defineOptions({
   name: 'IndFormCheckbox',
 })
@@ -56,15 +58,13 @@ defineProps({
   value: [String, Boolean],
   checked: Boolean,
   advice: Boolean,
+  adviceLabel: String,
   tooltip: Boolean,
   labelClasses: String,
   disabled: Boolean,
   modelValue: Boolean,
   number: String,
 })
-
-const slots = useSlots()
-const slotPassed = !!slots.default
 </script>
 
 <style>

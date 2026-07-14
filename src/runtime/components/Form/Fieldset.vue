@@ -1,5 +1,5 @@
 <template>
-    <fieldset class="card w-full shrink-0 grow-0 mb-4 p-4 bg-white rounded-xl tablet:p-6 transition-all shadow-sm scroll-mt-6 tablet:scroll-mt-8" ref="sectionRef" :class="classesCard">
+    <fieldset class="card w-full shrink-0 grow-0 mb-4 p-4 bg-white rounded-xl tablet:p-6 transition-all shadow-raised scroll-mt-6 tablet:scroll-mt-8" ref="sectionRef" :class="classesCard">
         <header v-if="title" class="flex items-start border-b-grey-light" :class="classesHeader">
           <div v-if="step" class="hexagon w-7 h-7 tablet:w-8 tablet:h-8 mr-2 tablet:mr-4 z-10" :class="classesHexagon"></div>
 

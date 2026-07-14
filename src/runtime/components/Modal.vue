@@ -6,7 +6,7 @@
     >
       <div
         v-if="isOpen"
-        class="modal fixed top-4 z-80 grid w-full grid-rows-[auto_1fr_auto] rounded-t-xl shadow-2xl desktop:right-0 desktop:top-0 desktop:rounded-l-xl desktop:rounded-tr-none"
+        class="modal fixed top-4 z-80 grid w-full grid-rows-[auto_1fr_auto] rounded-t-xl shadow-overlay desktop:right-0 desktop:top-0 desktop:rounded-l-xl desktop:rounded-tr-none"
         :class="[classes, sizeClasses, backgroundColorClass]"
         role="dialog"
         aria-modal="true"
