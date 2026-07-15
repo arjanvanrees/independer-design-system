@@ -7,7 +7,12 @@
         </h1>
       </header>
 
-      <IndFormFieldset title="Persoonlijke gegevens" class="card--first" :step="true" :section="{ state: 'editing'}">
+      <IndFormFieldset
+        title="Persoonlijke gegevens"
+        class="card--first"
+        :step="true"
+        :section="{ state: 'editing' }"
+      >
         <template #editing>
           <IndFormRow grid>
             <IndFormInput
@@ -66,7 +71,12 @@
         </template>
       </IndFormFieldset>
 
-      <IndFormFieldset title="Voorkeuren" class="card--last" :step="true" :section="{ state: 'editing'}">
+      <IndFormFieldset
+        title="Voorkeuren"
+        class="card--last"
+        :step="true"
+        :section="{ state: 'editing' }"
+      >
         <template #editing>
           <IndFormRow>
             <IndFormTabs
@@ -74,7 +84,7 @@
               :options="customerTypeOptions"
             />
           </IndFormRow>
-    
+
           <IndFormRadio
             id="contact-email"
             v-model="form.contact"
@@ -84,7 +94,7 @@
             advice
             advice-label="Snelst"
           />
-          
+
           <IndFormRadio
             id="contact-phone"
             v-model="form.contact"

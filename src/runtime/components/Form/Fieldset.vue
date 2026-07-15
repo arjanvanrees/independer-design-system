@@ -1,34 +1,59 @@
 <template>
-    <fieldset class="card w-full shrink-0 grow-0 mb-4 p-4 bg-white rounded-xl tablet:p-6 transition-all shadow-raised scroll-mt-6 tablet:scroll-mt-8" ref="sectionRef" :class="classesCard">
-        <header v-if="title" class="flex items-start border-b-grey-light" :class="classesHeader">
-          <div v-if="step" class="hexagon w-7 h-7 tablet:w-8 tablet:h-8 mr-2 tablet:mr-4 z-10" :class="classesHexagon"></div>
+  <fieldset
+    ref="sectionRef"
+    class="card w-full shrink-0 grow-0 mb-4 p-4 bg-white rounded-xl tablet:p-6 transition-all shadow-raised scroll-mt-6 tablet:scroll-mt-8"
+    :class="classesCard"
+  >
+    <header
+      v-if="title"
+      class="flex items-start border-b-grey-light"
+      :class="classesHeader"
+    >
+      <div
+        v-if="step"
+        class="hexagon w-7 h-7 tablet:w-8 tablet:h-8 mr-2 tablet:mr-4 z-10"
+        :class="classesHexagon"
+      />
 
-          <h3 class="transition-all" :class="classesTitle">
-            {{ title }}
-          </h3>
+      <h3
+        class="transition-all"
+        :class="classesTitle"
+      >
+        {{ title }}
+      </h3>
 
-          <button v-if="section.state === 'saved' || section.state === 'paused'" class="!p-0 text-purple cursor-pointer hover:text-purple-dark ml-auto" @click.prevent="emit('edit', $event)">
-            <Icon name="eva:edit-outline" />   
-          </button>
-        </header>
+      <button
+        v-if="section.state === 'saved' || section.state === 'paused'"
+        class="!p-0 text-purple cursor-pointer hover:text-purple-dark ml-auto"
+        @click.prevent="emit('edit', $event)"
+      >
+        <Icon name="eva:edit-outline" />
+      </button>
+    </header>
 
-        <div class="desktop:mx-12">
-          <Collapse :when="section.state === 'saved' || section.state === 'paused'" class="v-collapse"> 
-            <slot name="saved" />
-          </Collapse>
+    <div class="desktop:mx-12">
+      <Collapse
+        :when="section.state === 'saved' || section.state === 'paused'"
+        class="v-collapse"
+      >
+        <slot name="saved" />
+      </Collapse>
 
-          <Collapse :when="section.state === 'editing'" class="v-collapse">
-            <slot name="editing" />
-          </Collapse>
-        </div>
-    </fieldset>
+      <Collapse
+        :when="section.state === 'editing'"
+        class="v-collapse"
+      >
+        <slot name="editing" />
+      </Collapse>
+    </div>
+  </fieldset>
 </template>
 
 <script setup>
 import { Collapse } from 'vue-collapsed'
 import { computed, ref, watch } from 'vue'
 
-const emit = defineEmits(['edit']);
+const emit = defineEmits(['edit'])
 
 const props = defineProps({
   title: String,
@@ -36,48 +61,48 @@ const props = defineProps({
   section: {
     type: Object,
     default: () => ({ state: 'editing' }),
-    required: false
+    required: false,
   },
   name: String,
-});
+})
 
-const sectionRef = ref(null);
+const sectionRef = ref(null)
 
 const classesCard = computed(() => {
   return {
-    'editing': 'card--editing',
-    'paused': 'card--paused',
-    'saved': 'card--saved',
-    'closed': 'card--closed cursor-not-allowed',
-  }[props.section.state];
-});
+    editing: 'card--editing',
+    paused: 'card--paused',
+    saved: 'card--saved',
+    closed: 'card--closed cursor-not-allowed',
+  }[props.section.state]
+})
 
 const classesHeader = computed(() => {
   return {
-    'editing': 'pb-4',
-    'paused': 'pb-4',
-    'saved': 'pb-4',
-    'closed': '!mb-0',
-  }[props.section.state];
-});
+    editing: 'pb-4',
+    paused: 'pb-4',
+    saved: 'pb-4',
+    closed: '!mb-0',
+  }[props.section.state]
+})
 
 const classesTitle = computed(() => {
   return {
-    'editing': 'text-purple-dark',
-    'saved': 'text-purple-dark',
-    'paused': 'text-purple-dark',
-    'closed': '!text-grey-dark',
-  }[props.section.state];
-});
+    editing: 'text-purple-dark',
+    saved: 'text-purple-dark',
+    paused: 'text-purple-dark',
+    closed: '!text-grey-dark',
+  }[props.section.state]
+})
 
 const classesHexagon = computed(() => {
   return {
-    'editing': 'hexagon--editing',
-    'paused': 'hexagon--closed',
-    'saved': 'hexagon--saved',
-    'closed': 'hexagon--closed',
-  }[props.section.state];
-});
+    editing: 'hexagon--editing',
+    paused: 'hexagon--closed',
+    saved: 'hexagon--saved',
+    closed: 'hexagon--closed',
+  }[props.section.state]
+})
 
 watch(() => props.section.state, (value) => {
   if (value === 'editing') {

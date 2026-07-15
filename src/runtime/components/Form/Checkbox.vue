@@ -27,10 +27,10 @@
           class="ml-2 cursor-pointer text-grey-dark"
         />
 
-        <IndPill 
-          v-if="advice" 
+        <IndPill
+          v-if="advice"
           :label="adviceLabel"
-          class="ml-2" 
+          class="ml-2"
         />
 
         <div

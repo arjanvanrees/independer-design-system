@@ -1,5 +1,8 @@
 <template>
-  <Transition name="price-fade" mode="out-in">
+  <Transition
+    name="price-fade"
+    mode="out-in"
+  >
     <div :key="price">
       {{ textPrepend }}
 
@@ -16,17 +19,17 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
+defineProps({
   price: {
     type: Number,
-    required: true
+    required: true,
   },
   withoutSymbol: {
     type: Boolean,
-    default: false
+    default: false,
   },
   textPrepend: String,
-  textAppend: String
+  textAppend: String,
 })
 </script>
 
