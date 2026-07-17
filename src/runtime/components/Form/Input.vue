@@ -44,6 +44,7 @@
       <input
         :id="name"
         :ref="name"
+        v-maska="mask"
         class="
           block
           h-12
@@ -94,6 +95,8 @@
 </template>
 
 <script setup>
+import { vMaska } from 'maska/vue'
+
 const emit = defineEmits(['update:modelValue', 'input', 'blur', 'focus', 'step-up', 'step-down'])
 
 defineProps({
@@ -118,6 +121,7 @@ defineProps({
   placeholder: String,
   labelClasses: String,
   error: String,
+  mask: [String, Object],
 })
 
 const stepUp = () => {
