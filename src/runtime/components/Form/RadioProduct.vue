@@ -82,6 +82,7 @@
         <IndPill
           v-if="advice"
           class="mt-1 self-start"
+          color="brand-primary"
           :label="adviceLabel"
         />
       </div>

@@ -30,6 +30,7 @@
         <IndPill
           v-if="advice"
           :label="adviceLabel"
+          color="brand-primary"
           class="ml-2"
         />
 

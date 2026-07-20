@@ -33,6 +33,8 @@ const color = computed(() => {
       return 'bg-purple-200 text-purple-dark'
     case 'blue-subtle':
       return 'bg-blue-200 text-blue-900'
+    case 'brand-primary':
+      return 'bg-brand-primary text-white'
     default:
       return 'bg-peach-200 text-peach-900'
   }
