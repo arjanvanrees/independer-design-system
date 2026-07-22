@@ -33,7 +33,7 @@
   <button
     v-else
     class="inline-flex cursor-pointer justify-center rounded-lg border font-semibold outline-none ring-purple transition-all ease-out focus-visible:border-purple focus-visible:ring-1"
-    :class="[classes, loadingClasses, iconOnly]"
+    :class="[classes, loadingClasses, sizeClasses]"
     :disabled="disabled"
   >
     <slot>
@@ -102,13 +102,17 @@ const classes = computed(() => {
     'naked-white':
       'bg-transparent border-white text-white hover:bg-black/10 active:bg-black/30 ring-white focus-visible:border-white',
     'link':
-      'justify-start px-0 bg-transparent border-transparent text-purple hover:text-purple-dark active:text-purple-900',
+      'justify-start bg-transparent border-transparent text-purple hover:text-purple-dark active:text-purple-900',
   }[props.tone]
 })
 
-const iconOnly = computed(() => {
+const sizeClasses = computed(() => {
   if (props.label === undefined && props.icon !== undefined) {
     return 'p-[0.6875rem]'
+  }
+
+  if (props.tone === 'link') {
+    return 'px-0 py-[0.6875rem]'
   }
 
   return 'px-3 py-[0.6875rem]'

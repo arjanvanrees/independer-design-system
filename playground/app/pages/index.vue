@@ -134,6 +134,11 @@
               tone="wire-purple"
             />
 
+            <IndButton
+              label="Link actie"
+              tone="link"
+            />
+
             <IndButtonToggle
               :state="showSummary"
               icon-primary="eva:eye-outline"
