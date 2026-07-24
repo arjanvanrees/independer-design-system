@@ -1,4 +1,6 @@
 <template>
+  <IndHeader />
+
   <main class="min-h-screen bg-interface py-8">
     <div class="grid-container">
       <header class="mb-8">
@@ -152,6 +154,8 @@
       </IndFormFieldset>
     </div>
   </main>
+
+  <IndFooter />
 </template>
 
 <script setup>
