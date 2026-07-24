@@ -7,8 +7,6 @@
 
 Independer Design System for Nuxt 4.
 
-- [✨ &nbsp;Release Notes](/CHANGELOG.md)
-
 ## Features
 
 - ⛰ &nbsp;Create interactive prototypes with the included components
