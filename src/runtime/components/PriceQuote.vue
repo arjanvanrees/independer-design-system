@@ -5,21 +5,16 @@
   >
     <div :key="price">
       {{ textPrepend }}
-
-      <template v-if="withoutSymbol">
-        {{ $n(price, 'currencyNoSymbol') }}
-      </template>
-      <template v-else>
-        {{ $n(price, 'currency') }}
-      </template>
-
+      {{ formattedPrice }}
       {{ textAppend }}
     </div>
   </Transition>
 </template>
 
 <script lang="ts" setup>
-defineProps({
+import { computed } from 'vue'
+
+const props = defineProps({
   price: {
     type: Number,
     required: true,
@@ -28,8 +23,32 @@ defineProps({
     type: Boolean,
     default: false,
   },
+  locale: {
+    type: String,
+    default: 'nl-NL',
+  },
+  currency: {
+    type: String,
+    default: 'EUR',
+  },
   textPrepend: String,
   textAppend: String,
+})
+
+const formattedPrice = computed(() => {
+  if (props.withoutSymbol) {
+    return new Intl.NumberFormat(props.locale, {
+      style: 'decimal',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    }).format(props.price)
+  }
+
+  return new Intl.NumberFormat(props.locale, {
+    style: 'currency',
+    currency: props.currency,
+    minimumFractionDigits: 2,
+  }).format(props.price)
 })
 </script>
 
