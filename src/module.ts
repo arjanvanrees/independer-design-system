@@ -27,18 +27,5 @@ export default defineNuxtModule<ModuleOptions>({
       prefix: 'Ind',
       pathPrefix: true,
     })
-
-    nuxt.options.css.push(resolver.resolve('./runtime/assets/style.css'))
-
-    nuxt.hook('vite:extend', async ({ config }) => {
-      const plugin = await import('@tailwindcss/vite').then(r => r.default)
-      config.plugins ||= []
-      // @ts-expect-error - Vite Plugin type mismatch between @tailwindcss/vite and @nuxt/vite-builder
-      config.plugins.push(plugin())
-    })
-
-    if (nuxt.options.builder !== '@nuxt/vite-builder') {
-      nuxt.options.postcss.plugins['@tailwindcss/postcss'] = {}
-    }
   },
 })

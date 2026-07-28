@@ -9,7 +9,8 @@
     ".": {
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
-    }
+    },
+    "./style.css": "./dist/runtime/assets/style.css"
   },
   "main": "./dist/module.mjs",
   "typesVersions": {
@@ -41,12 +42,11 @@
   "dependencies": {
     "@nuxt/icon": "^2.2.1",
     "@nuxt/kit": "^4.3.1",
-    "@nuxtjs/tailwindcss": "^6.14.0",
-    "@tailwindcss/vite": "^4.2.1",
+    "@tailwindcss/vite": "^4.3.3",
     "@vueuse/components": "^14.3.0",
     "@vueuse/core": "^14.3.0",
     "maska": "^3.2.0",
-    "tailwindcss": "^4.2.1",
+    "tailwindcss": "^4.3.3",
     "vue-collapsed": "^1.3.5"
   },
   "devDependencies": {
