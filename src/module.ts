@@ -21,7 +21,7 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
 
-  setup(options, nuxt) {
+  setup(_options, _nuxt) {
     addComponentsDir({
       path: resolver.resolve('./runtime/components'),
       prefix: 'Ind',

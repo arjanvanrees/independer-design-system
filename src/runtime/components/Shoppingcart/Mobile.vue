@@ -1,19 +1,31 @@
 <template>
-    <div class="mb-4 desktop:hidden">
-      <div class="relative flex flex-col p-4 bg-white rounded-xl shadow-sm z-10 tablet:p-6">
-        <h3>{{ title[domain] }}</h3>
-  
-        <div class="flex flex-col items-start pt-4">
-          <ShoppingcartSummary :company="company" :logo="logo" :product="product" />
-          <button class="text-purple hover:text-purple-dark" @click.prevent="$emit('toggleModalCart')">Uitleg van je premie</button>
-        </div>
-      </div>
+  <div class="mb-4 desktop:hidden">
+    <div class="relative flex flex-col p-4 bg-white rounded-xl shadow-sm z-10 tablet:p-6">
+      <h3>{{ title[domain] }}</h3>
 
-      <div class="flex -mt-6 pt-10 p-4 font-semibold text-white bg-purple-dark rounded-b-xl tablet:px-6">
-        {{ totalText[domain] }}
-        <PriceQuote :price="total" class="ml-auto" />
+      <div class="flex flex-col items-start pt-4">
+        <ShoppingcartSummary
+          :company="company"
+          :logo="logo"
+          :product="product"
+        />
+        <button
+          class="text-purple hover:text-purple-dark"
+          @click.prevent="$emit('toggleModalCart')"
+        >
+          Uitleg van je premie
+        </button>
       </div>
     </div>
+
+    <div class="flex -mt-6 pt-10 p-4 font-semibold text-white bg-purple-dark rounded-b-xl tablet:px-6">
+      {{ totalText[domain] }}
+      <PriceQuote
+        :price="total"
+        class="ml-auto"
+      />
+    </div>
+  </div>
 </template>
 
 <script setup>
@@ -40,13 +52,13 @@ defineProps({
   },
 })
 
-const emit = defineEmits(['toggleModalCart'])
+defineEmits(['toggleModalCart'])
 
 const title = {
   energy: 'Je energicontract',
   zorg: 'Je zorgverzekering',
   auto: 'Je autoverzekering',
-  fiets: 'Je fietsverzekering'
+  fiets: 'Je fietsverzekering',
 }
 
 const totalText = {

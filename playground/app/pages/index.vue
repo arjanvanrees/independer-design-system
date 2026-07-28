@@ -158,23 +158,27 @@
       <aside class="col-span-4">
         <IndShoppingcart>
           <template #summary>
-            <IndShoppingcartSummary company="VGZbewuzt" logo="" product="Basisverzekering" />
+            <IndShoppingcartSummary
+              company="VGZbewuzt"
+              logo=""
+              product="Basisverzekering"
+            />
           </template>
 
-          
           <template #content>
             Content
           </template>
 
           <template #footer>
-            <IndShoppingcartFooter period="Je betaalt per maand" :price="13.31" />
+            <IndShoppingcartFooter
+              period="Je betaalt per maand"
+              :price="13.31"
+            />
           </template>
         </IndShoppingcart>
       </aside>
     </div>
   </main>
-
-
 
   <IndFooter />
 </template>

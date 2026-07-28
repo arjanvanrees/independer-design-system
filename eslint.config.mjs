@@ -16,5 +16,12 @@ export default createConfigForNuxt({
   },
 })
   .append(
-    // your custom flat config here...
+    {
+      files: ['src/runtime/components/**/*.vue'],
+      rules: {
+        // Nuxt prefixes auto-imported components with `Ind` and their directory path.
+        // For example, Form/Input.vue is exposed as IndFormInput.
+        'vue/multi-word-component-names': 'off',
+      },
+    },
   )

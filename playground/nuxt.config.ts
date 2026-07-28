@@ -7,11 +7,11 @@ export default defineNuxtConfig({
 
   css: ['../src/runtime/assets/style.css'],
 
+  compatibilityDate: 'latest',
+
   vite: {
     plugins: [
       tailwindcss(),
     ],
   },
-
-  compatibilityDate: 'latest',
 })

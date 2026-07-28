@@ -1,11 +1,18 @@
 <template>
-    <div class="flex w-full">
-      <div class="flex flex-col">
-        <div class="font-semibold">{{ company}}</div>
-        <div class="text-grey-dark">{{ product }}</div>
+  <div class="flex w-full">
+    <div class="flex flex-col">
+      <div class="font-semibold">
+        {{ company }}
       </div>
-      
-      <img class="w-27 h-12 ml-auto object-contain object-right" :src="logo"  />
+      <div class="text-grey-dark">
+        {{ product }}
+      </div>
+    </div>
+
+    <img
+      class="w-27 h-12 ml-auto object-contain object-right"
+      :src="logo"
+    >
   </div>
 </template>
 
@@ -22,6 +29,6 @@ defineProps({
   product: {
     type: String,
     required: true,
-  }
+  },
 })
 </script>

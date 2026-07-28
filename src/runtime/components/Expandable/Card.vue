@@ -14,13 +14,13 @@
           v-if="expandable"
           name="eva:arrow-ios-downward-outline"
           class="text-purple transition-all duration-300 group-hover:text-purple-dark"
-          :class="{ '-rotate-180': expanded }"
+          :class="{ '-rotate-180': isExpanded }"
         />
       </div>
     </button>
 
     <Collapse
-      :when="expanded"
+      :when="isExpanded"
       class="v-collapse"
     >
       <div class="p-4 pt-0 tablet:p-6 tablet:pt-0">
@@ -34,7 +34,7 @@
 import { Collapse } from 'vue-collapsed'
 import { onMounted, ref } from 'vue'
 
-const expanded = ref(false)
+const isExpanded = ref(false)
 
 const props = defineProps({
   title: String,
@@ -50,7 +50,7 @@ const props = defineProps({
 
 onMounted(() => {
   if (!props.expandable || props.expanded) {
-    expanded.value = true
+    isExpanded.value = true
   }
 })
 
@@ -59,6 +59,6 @@ const toggle = () => {
     return
   }
 
-  expanded.value = !expanded.value
+  isExpanded.value = !isExpanded.value
 }
 </script>

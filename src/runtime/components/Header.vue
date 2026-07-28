@@ -157,7 +157,10 @@
       </ul>
     </div>
 
-    <IndStepsIndicator v-if="steps.length > 0" :steps="steps" />
+    <IndStepsIndicator
+      v-if="steps.length > 0"
+      :steps="steps"
+    />
 
     <LazyIndModal
       :show="modalProducts"
