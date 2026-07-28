@@ -132,21 +132,18 @@
 
         <li class="relative">
           <IndMenuButton
-            v-if="user.loggedIn"
             :state="account"
             @toggle="toggleAccount"
           >
-            <Icon name="eva:person-done-outline" />
-            <span class="hidden desktop:block">{{ user.name }}</span>
-          </IndMenuButton>
+            <template v-if="user.loggedIn">
+              <Icon name="eva:person-done-outline" />
+              <span class="hidden desktop:block">{{ user.name }}</span>
+            </template>
 
-          <IndMenuButton
-            v-if="!user.loggedIn"
-            :icon="false"
-            @toggle="toggleAccount"
-          >
-            <Icon name="eva:person-delete-outline" />
-            <span class="hidden desktop:block">Inloggen</span>
+            <template v-else>
+              <Icon name="eva:person-delete-outline" />
+              <span class="hidden desktop:block">Inloggen</span>
+            </template>
           </IndMenuButton>
 
           <div
@@ -154,7 +151,7 @@
             v-on-click-outside="toggleAccount"
             class="absolute right-0 z-30 flex mt-2 rounded-lg drop-shadow-lg"
           >
-            <IndMenuAccount />
+            <IndMenuAccount :user="user" />
           </div>
         </li>
       </ul>
@@ -200,7 +197,7 @@
       :show="modalAccount"
       @close="toggleModalAccount"
     >
-      <IndMenuAccount />
+      <IndMenuAccount :user="user" />
     </LazyIndModal>
   </header>
 </template>
