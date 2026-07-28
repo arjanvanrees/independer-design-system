@@ -104,19 +104,6 @@ npm run dev
 
 </details>
 
-### Publishing
-
-Package publishing runs automatically when a `v*` tag is pushed. The publish workflow verifies that the tag matches the version in `package.json`, runs linting and tests, builds the package, and publishes it to npm.
-
-Configure npm trusted publishing once for the `independer-design-system` package with:
-
-- GitHub owner: `arjanvanrees`
-- Repository: `independer-design-system`
-- Workflow: `publish.yml`
-- Allowed action: `npm publish`
-
-No long-lived npm token is required. After trusted publishing is configured, run `npm run release` locally to create and push the release commit and tag.
-
 
 <!-- Badges -->
 [npm-version-src]: https://img.shields.io/npm/v/independer-design-system/latest.svg?style=flat&colorA=020420&colorB=00DC82
