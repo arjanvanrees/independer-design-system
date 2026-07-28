@@ -157,7 +157,7 @@
       </ul>
     </div>
 
-    <IndStepsIndicator :steps="steps" />
+    <IndStepsIndicator v-if="steps.length > 0" :steps="steps" />
 
     <LazyIndModal
       :show="modalProducts"
@@ -215,13 +215,7 @@ defineProps({
   },
   steps: {
     type: Array,
-    default: () => ([
-      {
-        number: 1,
-        label: '1. Gegevens',
-        path: `/`,
-      },
-    ]),
+    default: () => ([]),
   },
   user: {
     type: Object,
