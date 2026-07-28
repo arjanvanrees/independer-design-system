@@ -223,7 +223,6 @@ defineProps({
       },
     ]),
   },
-  domain: String,
   user: {
     type: Object,
     default: () => ({
