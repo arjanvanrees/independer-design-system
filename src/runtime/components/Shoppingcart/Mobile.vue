@@ -4,7 +4,7 @@
       <h3>{{ title[domain] }}</h3>
 
       <div class="flex flex-col items-start pt-4">
-        <ShoppingcartSummary
+        <IndShoppingcartSummary
           :company="company"
           :logo="logo"
           :product="product"
@@ -20,7 +20,7 @@
 
     <div class="flex -mt-6 pt-10 p-4 font-semibold text-white bg-purple-dark rounded-b-xl tablet:px-6">
       {{ totalText[domain] }}
-      <PriceQuote
+      <IndPriceQuote
         :price="total"
         class="ml-auto"
       />

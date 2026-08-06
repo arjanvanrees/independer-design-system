@@ -3,7 +3,7 @@
     v-if="path && !disabled"
     :to="path"
     class="inline-flex justify-center rounded-lg border font-semibold outline-none ring-purple transition-all ease-out focus-visible:border-purple focus-visible:ring-1"
-    :class="[classes, loadingClasses, iconOnly]"
+    :class="[classes, loadingClasses]"
   >
     <slot>
       <Icon

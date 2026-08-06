@@ -41,6 +41,7 @@ By default, the module registers the following components:
 - `IndDialog`
 - `IndExpandableCard`
 - `IndExpandableFilter`
+- `IndFooter`
 - `IndFormCheckbox`
 - `IndFormCheckboxProduct`
 - `IndFormFieldset`
@@ -52,11 +53,29 @@ By default, the module registers the following components:
 - `IndFormSelect`
 - `IndFormTabs`
 - `IndFormTextarea`
+- `IndHeader`
+- `IndLogo`
+- `IndMenuAccount`
+- `IndMenuButton`
+- `IndMenuEnergie`
+- `IndMenuKennis`
+- `IndMenuKennisbank`
+- `IndMenuKlantenservice`
+- `IndMenuProducts`
+- `IndMenuVerzekeringen`
 - `IndModal`
 - `IndNotification`
 - `IndPill`
 - `IndPrice`
 - `IndPriceQuote`
+- `IndShoppingcartFooter`
+- `IndShoppingcartIndex`
+- `IndShoppingcartMobile`
+- `IndShoppingcartSummary`
+- `IndStepsIndicator`
+- `IndSubmenuExpand`
+- `IndSubmenuItem`
+- `IndSubmenuProduct`
 - `IndUSP`
 
 Use the module in `nuxt.config.ts`:
