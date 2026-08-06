@@ -4,7 +4,7 @@
       <div class="font-semibold">
         {{ company }}
       </div>
-      
+
       <div class="text-grey-dark">
         {{ product }}
       </div>
