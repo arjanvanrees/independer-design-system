@@ -6,7 +6,7 @@
     <Icon
       v-if="icon"
       :name="icon"
-      class="shrink-0 object-contain"
+      class="shrink-0 text-current"
       :class="sizeClasses.image"
     />
     {{ label }}
@@ -83,10 +83,10 @@ const colors = {
 
 // Dimensions follow the Figma base-pill sizes.
 const sizes = {
-  xs: { root: 'gap-1 px-2 py-1 text-xs leading-4', image: 'size-4' },
-  sm: { root: 'gap-1 px-2 py-1 text-sm leading-5', image: 'size-5' },
-  md: { root: 'gap-1 h-9 px-3 text-sm leading-5', image: 'size-5' },
-  lg: { root: 'gap-2 px-4 py-2 text-base leading-6', image: 'size-6' },
+  xs: { root: 'gap-1 px-2 py-1 text-xs leading-4', image: 'size-4!' },
+  sm: { root: 'gap-1 px-2 py-1 text-sm leading-5', image: 'size-5!' },
+  md: { root: 'gap-1 px-3 py-2 text-sm leading-5', image: 'size-5!' },
+  lg: { root: 'gap-2 px-4 py-2 text-base leading-6', image: 'size-6!' },
 }
 
 const colorClasses = computed(() => colors[props.color] ?? colors['secondary-subtle'])
