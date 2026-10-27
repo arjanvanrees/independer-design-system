@@ -96,13 +96,13 @@ const classes = computed(() => {
     'wire-purple':
       'border-purple text-purple hover:text-purple hover:bg-purple-200 active:bg-purple/40 disabled:bg-transparent disabled:border-grey disabled:text-grey disabled:cursor-not-allowed',
     'naked-purple':
-      'border-transparent text-purple hover:bg-purple-200 active:bg-purple/40',
+      'border-transparent text-purple hover:bg-purple-200 active:bg-purple/40 disabled:text-grey disabled:cursor-not-allowed',
     'wire-white':
       'bg-transparent border-white text-white hover:bg-black/10 active:bg-black/30 ring-white focus-visible:border-white disabled:bg-transparent disabled:border-grey disabled:text-grey disabled:cursor-not-allowed',
     'naked-white':
-      'bg-transparent border-white text-white hover:bg-black/10 active:bg-black/30 ring-white focus-visible:border-white',
+      'bg-transparent border-white text-white hover:bg-black/10 active:bg-black/30 ring-white focus-visible:border-white disabled:text-grey disabled:cursor-not-allowed',
     'link':
-      'justify-start bg-transparent border-transparent text-purple hover:text-purple-dark active:text-purple-900',
+      'justify-start bg-transparent border-transparent text-purple hover:text-purple-dark active:text-purple-900 disabled:text-grey disabled:cursor-not-allowed',
   }[props.tone]
 })
 
