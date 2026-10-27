@@ -1,6 +1,10 @@
 # Changelog
 
 
+## v1.7.5
+
+[compare changes](https://github.com/arjanvanrees/independer-design-system/compare/v1.7.4...v1.7.5)
+
 ## v1.7.4
 
 [compare changes](https://github.com/arjanvanrees/independer-design-system/compare/v1.7.3...v1.7.4)
