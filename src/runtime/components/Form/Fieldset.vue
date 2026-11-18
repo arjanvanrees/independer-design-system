@@ -1,7 +1,7 @@
 <template>
   <fieldset
     ref="sectionRef"
-    class="card w-full shrink-0 grow-0 mb-4 p-4 bg-white rounded-xl tablet:p-6 transition-all shadow-raised scroll-mt-6 tablet:scroll-mt-8"
+    class="card w-full shrink-0 grow-0 mb-4 p-4 bg-white rounded-xl tablet:p-6 transition-all shadow-raised scroll-mt-6"
     :class="classesCard"
   >
     <header
