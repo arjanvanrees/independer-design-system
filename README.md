@@ -44,10 +44,12 @@ By default, the module registers the following components:
 - `IndFooter`
 - `IndFormCheckbox`
 - `IndFormCheckboxProduct`
+- `IndFormCombobox`
 - `IndFormFieldset`
 - `IndFormInput`
 - `IndFormLabel`
 - `IndFormRadio`
+- `IndFormRadioGroup`
 - `IndFormRadioProduct`
 - `IndFormRow`
 - `IndFormSelect`
@@ -92,6 +94,91 @@ Run the local playground to see the base form components in context:
 npm run dev
 ```
 
+## Radio groups
+
+`IndFormRadioGroup` accepts a shared `v-model`, a unique `name`, a `label`, and
+options with unique string or boolean `value`s, `label`, and optional `id` and
+`disabled` fields. The default slot can contain help text; `error` displays a
+validation message. Changing the options does not change the model automatically.
+
+```vue
+<template>
+  <IndFormRow>
+    <IndFormRadioGroup
+      v-model="energy.connectionType"
+      name="connectionType"
+      label="Wat heb je nodig?"
+      :options="connectionOptions"
+    >
+      <p v-if="!energy.connectionHasGas" class="text-grey-dark">
+        We zien dat er geen gasaansluiting is op jouw adres. Daarom selecteren we 'Alleen stroom' automatisch.
+      </p>
+    </IndFormRadioGroup>
+  </IndFormRow>
+
+  <IndFormRow>
+    <IndFormRadioGroup
+      v-model="energy.checkout.geslacht"
+      name="geslacht"
+      label="Geslacht"
+      :options="genderOptions"
+      :error="errors.geslacht"
+    />
+  </IndFormRow>
+</template>
+
+<script setup>
+const connectionOptions = computed(() => [
+  ...(energy.connectionHasGas ? [{ value: 'ElektraEnGas', label: 'Stroom en gas' }] : []),
+  { value: 'Elektra', label: 'Alleen stroom', disabled: !energy.connectionHasGas },
+  ...(energy.connectionHasGas ? [{ value: 'Gas', label: 'Alleen gas' }] : []),
+])
+const genderOptions = [
+  { value: 'man', label: 'Man' },
+  { value: 'vrouw', label: 'Vrouw' },
+]
+</script>
+```
+
+Set `energy.connectionType` to `'Elektra'` in the application when there is no
+gas connection.
+
+## Searchable combobox
+
+```vue
+<template>
+  <IndFormCombobox
+    v-model="supplier"
+    name="supplier"
+    label="Van wie krijg je nu energie?"
+    :options="['Eneco', 'Essent', 'Vattenfall']"
+    button-label="Toon energieleveranciers"
+    empty-message="Geen leverancier gevonden."
+    :error="supplierError"
+    @update:model-value="selectSupplier"
+  />
+</template>
+
+<script setup>
+const supplier = ref(null)
+const supplierError = ref('')
+function selectSupplier(value) {
+  supplierError.value = value === null ? 'Kies een leverancier.' : ''
+}
+</script>
+```
+
+Options can be strings or `{ label, value }` objects with unique string/number
+values. The model contains the selected value, not the option object. Filtering
+is case-insensitive and uses the label. Clearing the input sets the model to
+`null` by default; use `:nullable="false"` to prevent clearing the selection.
+
+Use `disabled`, `placeholder`, `label-classes`, and `error` as with other form
+components. `name` is required and provides the input ID and form field name.
+Supply a visible `label` for accessibility. `leading-icon` defaults to the search
+icon; set it to `""` to hide it. The component fills its container, so apply any
+desired width to the component or its parent.
+
 ## Contribution
 
 <details>
@@ -113,6 +200,9 @@ npm run dev
   # Run ESLint
   npm run lint
   
+  # Install Chromium for browser interaction tests (once)
+  npm exec playwright-core -- install chromium --only-shell
+
   # Run Vitest
   npm run test
   npm run test:watch

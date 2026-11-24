@@ -64,6 +64,17 @@
             </IndFormRow>
 
             <IndFormRow>
+              <IndFormCombobox
+                v-model="form.supplier"
+                name="supplier"
+                label="Van wie krijg je nu energie?"
+                :options="['Eneco', 'Essent', 'Vattenfall']"
+                button-label="Toon energieleveranciers"
+                empty-message="Geen leverancier gevonden."
+              />
+            </IndFormRow>
+
+            <IndFormRow>
               <IndFormTextarea
                 v-model="form.notes"
                 name="notes"
@@ -192,6 +203,7 @@ const form = reactive({
   firstName: '',
   lastName: '',
   product: '',
+  supplier: null,
   amount: 1000,
   city: '',
   notes: '',
