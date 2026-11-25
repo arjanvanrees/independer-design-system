@@ -51,10 +51,10 @@
 
 <script setup>
 import shieldIcon from '../../assets/images/shield.svg'
-import sparenIcon from '../../assets/images/sparen.svg'
-import hypotheekIcon from '../../assets/images/hypotheek.svg'
-import energieIcon from '../../assets/images/energie.svg'
-import phoneIcon from '../../assets/images/phone.svg'
+import sparenIcon from '../../assets/images/money-pig.svg'
+import hypotheekIcon from '../../assets/images/keys.svg'
+import energieIcon from '../../assets/images/wind-turbine.svg'
+import phoneIcon from '../../assets/images/monitor-with-wifi.svg'
 
 const emit = defineEmits(['toggle-verzekeringen', 'toggle-energie', 'toggle-kennis', 'toggle-klantenservice'])
 
