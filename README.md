@@ -94,6 +94,16 @@ Run the local playground to see the base form components in context:
 npm run dev
 ```
 
+## Pills
+
+`IndPill` accepts a `color` matching the [Figma pill roles](https://www.figma.com/design/OVy77dgdz9wKlYCpVxLNY4/DS2-Components?node-id=601-4551):
+`neutral-subtle`, `neutral-strong`, `spotlight-subtle`, `spotlight-strong`,
+`brand-primary-subtle`, `brand-primary`, `brand-primary-strong`,
+`positive-subtle`, `positive-strong`, `warning-subtle`, `warning-strong`,
+`negative-subtle`, `negative-strong`, `accent-magenta-strong`,
+`accent-yellow-subtle`, `accent-yellow-strong`, and `disabled`.
+Existing outline, expert-advice, and legacy color names remain supported.
+
 ## Header menus
 
 Desktop header menus open on the first click and close on the second click.

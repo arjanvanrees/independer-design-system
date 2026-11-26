@@ -42,12 +42,12 @@ const props = defineProps({
 
 // Outline variants use an inset ring so the pill keeps the same size as the filled variants.
 const colors = {
-  'neutral-subtle': 'bg-neutral-subtlest text-text-default',
-  'neutral-strong': 'bg-neutral-strong text-white',
+  'neutral-subtle': 'bg-neutral text-text-default',
+  'neutral-strong': 'bg-grey-700 text-white',
   'neutral-outline': 'bg-transparent text-text-default ring-1 ring-inset ring-border-default-strong',
 
-  'spotlight-subtle': 'bg-spotlight text-text-spotlight-strong',
-  'spotlight-strong': 'bg-blue-600 text-white',
+  'spotlight-subtle': 'bg-blue-200 text-blue-800',
+  'spotlight-strong': 'bg-blue-700 text-white',
   'spotlight-outline': 'bg-transparent text-text-spotlight-strong ring-1 ring-inset ring-border-spotlight',
 
   'brand-primary-subtle': 'bg-brand-primary-subtler text-brand-primary-strong',
@@ -55,17 +55,21 @@ const colors = {
   'brand-primary-strong': 'bg-brand-primary-strong text-white',
   'brand-primary-outline': 'bg-transparent text-brand-primary-strong ring-1 ring-inset ring-brand-primary',
 
-  'positive-subtle': 'bg-green-100 text-green-900',
+  'positive-subtle': 'bg-green-200 text-green-800',
   'positive-strong': 'bg-green-700 text-white',
   'positive-outline': 'bg-transparent text-green-800 ring-1 ring-inset ring-green-600',
 
-  'warning-subtle': 'bg-warning text-orange-900',
-  'warning-strong': 'bg-warning-strong text-orange-1000',
+  'warning-subtle': 'bg-orange-200 text-orange-800',
+  'warning-strong': 'bg-orange-700 text-white',
   'warning-outline': 'bg-transparent text-orange-800 ring-1 ring-inset ring-orange-400',
 
-  'negative-subtle': 'bg-red-100 text-red-900',
-  'negative-strong': 'bg-red-600 text-white',
+  'negative-subtle': 'bg-red-200 text-red-800',
+  'negative-strong': 'bg-red-700 text-white',
   'negative-outline': 'bg-transparent text-red-800 ring-1 ring-inset ring-red-600',
+
+  'accent-magenta-strong': 'bg-red-600 text-white',
+  'accent-yellow-subtle': 'bg-accent-subtlest text-text-accent-inverse',
+  'accent-yellow-strong': 'bg-accent text-text-accent-inverse',
 
   'brand-accent-subtle': 'bg-accent-subtlest text-text-accent-inverse',
   'brand-accent': 'bg-accent text-text-accent-inverse',
@@ -73,7 +77,7 @@ const colors = {
   'brand-secondary-subtlest': 'bg-brand-secondary-subtlest text-text-expert-strong',
   'expert-advice': 'bg-brand-secondary-subtle text-text-expert-strong',
   'own-insurance': 'bg-brand-primary-subtlest text-brand-primary-strong',
-  'disabled': 'bg-neutral-subtlest text-grey-500',
+  'disabled': 'bg-neutral text-grey-500',
 
   // Legacy aliases
   'secondary-subtle': 'bg-peach-200 text-peach-900',
