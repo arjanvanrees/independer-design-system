@@ -1,4 +1,5 @@
 <template>
+  <IndHeader />
   <div>basic</div>
   <form>
     <IndFormCombobox

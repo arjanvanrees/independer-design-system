@@ -46,6 +46,7 @@
       <ul class="hidden desktop:flex gap-1">
         <li
           v-if="compact === false"
+          v-on-click-outside="() => products && toggleProducts()"
           class="hidden desktop:block"
         >
           <IndMenuButton
@@ -57,7 +58,6 @@
 
           <div
             v-if="products"
-            v-on-click-outside="toggleProducts"
             class="absolute z-30 flex mt-2 drop-shadow-lg"
           >
             <IndMenuProducts
@@ -75,6 +75,7 @@
 
         <li
           v-if="compact === false"
+          v-on-click-outside="() => kennis && toggleKennis()"
           class="hidden desktop:block"
         >
           <IndMenuButton
@@ -86,7 +87,6 @@
 
           <div
             v-if="kennis"
-            v-on-click-outside="toggleKennis"
             class="absolute z-30 flex mt-2 drop-shadow-lg"
           >
             <IndMenuKennis
@@ -100,6 +100,7 @@
 
         <li
           v-if="compact === false"
+          v-on-click-outside="() => klantenservice && toggleKlantenservice()"
           class="hidden desktop:block"
         >
           <IndMenuButton
@@ -111,7 +112,6 @@
 
           <div
             v-if="klantenservice"
-            v-on-click-outside="toggleKlantenservice"
             class="absolute z-30 flex mt-2 drop-shadow-lg"
           >
             <IndMenuKlantenservice />
@@ -130,7 +130,10 @@
           </IndMenuButton>
         </li>
 
-        <li class="relative">
+        <li
+          v-on-click-outside="() => account && toggleAccount()"
+          class="relative"
+        >
           <IndMenuButton
             :state="account"
             @toggle="toggleAccount"
@@ -148,7 +151,6 @@
 
           <div
             v-if="account"
-            v-on-click-outside="toggleAccount"
             class="absolute right-0 z-30 flex mt-2 rounded-lg drop-shadow-lg"
           >
             <IndMenuAccount :user="user" />

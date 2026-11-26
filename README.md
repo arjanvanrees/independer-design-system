@@ -94,6 +94,11 @@ Run the local playground to see the base form components in context:
 npm run dev
 ```
 
+## Header menus
+
+Desktop header menus open on the first click and close on the second click.
+Clicking outside a menu closes it; clicks inside its dropdown keep it open.
+
 ## Radio groups
 
 `IndFormRadioGroup` accepts a shared `v-model`, a unique `name`, a `label`, and
