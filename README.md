@@ -205,10 +205,7 @@ desired width to the component or its parent.
   # Run ESLint
   npm run lint
   
-  # Install Chromium for browser interaction tests (once)
-  npm exec playwright-core -- install chromium --only-shell
-
-  # Run Vitest
+  # Run the default Nuxt module SSR smoke test
   npm run test
   npm run test:watch
   
