@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   devtools: { enabled: true },
 
-  css: ['../src/runtime/assets/style.css'],
+  css: ['~/../../src/runtime/assets/style.css'],
 
   compatibilityDate: 'latest',
 

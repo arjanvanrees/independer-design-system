@@ -4,22 +4,15 @@
       <IndSubmenuItem
         label="Overzicht"
         icon="eva:file-text-outline"
+        to="/mijn/dashboard"
       />
       <IndSubmenuItem
         label="Adviezen"
         icon="eva:bell-outline"
       />
       <IndSubmenuItem
-        label="Vergelijken"
-        icon="eva:heart-outline"
-      />
-      <IndSubmenuItem
         label="Instellingen"
         icon="eva:settings-outline"
-      />
-      <IndSubmenuItem
-        label="Schade melden"
-        icon="eva:alert-triangle-outline"
       />
     </ul>
 

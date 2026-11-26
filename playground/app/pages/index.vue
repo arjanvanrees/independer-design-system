@@ -171,7 +171,7 @@
           <template #summary>
             <IndShoppingcartSummary
               company="VGZbewuzt"
-              logo=""
+              logo="https://www.independer-static.nl/images/logos/maatschappijen/thumb/vgzbewuzt.svg"
               product="Basisverzekering"
             />
           </template>

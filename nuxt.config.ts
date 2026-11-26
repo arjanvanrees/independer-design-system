@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     enabled: true,
   },
 
-  css: ['./src/runtime/assets/style.css'],
+  css: [' ~/../../src/runtime/assets/style.css'],
 
   vite: {
     plugins: [
